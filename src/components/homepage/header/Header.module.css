@@ -1,0 +1,123 @@
+.mainHeader {
+    background-image: url(../../../images/header-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.mainHeader .headerWrapper{
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 0 400px 0;
+}
+
+.mainHeader .headerWrapper .headerContent{
+    margin-left: 50px;
+    color: #f0f0f0;
+    max-width: 80%;
+}
+.mainHeader .headerWrapper .headerContent .title{
+    font-size: 110px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 7px;
+}
+.mainHeader .headerWrapper .headerContent .text{
+    font-size: 35px;
+    font-weight: 300;
+    margin: 55px 0;
+    letter-spacing: 3px;
+    line-height: 44px;
+}
+.mainHeader .headerWrapper .headerContent .headerNav{
+    display: flex;
+}
+
+.mainHeader .headerWrapper .headerContent .headerNav .link{
+    color: #f0f0f0;
+    border: 2px solid #f0f0f0;
+    font-size: 30px;
+    padding: 15px 50px;
+    margin-right: 50px;
+    position: relative;
+}
+
+.mainHeader .headerWrapper .headerContent .headerNav .link::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #f0f0f0;
+    transition: all 0.5s;
+}
+
+.mainHeader .headerWrapper .headerContent .headerNav .link:hover::before{
+    width: 20px;
+}
+
+@keyframes linkMoveAnimation {
+    from{
+        width: 0;
+    }
+    to{
+        width: 20px;
+    }
+}
+
+@media(max-width: 1200px){
+    .mainHeader .headerWrapper{
+        width: 100%;
+    }
+}
+
+@media(max-width: 900px) {
+    .mainHeader .headerWrapper {
+        padding: 0 0 200px 0;
+    }
+}
+
+@media(max-width: 700px){
+    .mainHeader .headerWrapper .headerContent {
+        margin-left: 25px;
+        max-width: 100%;
+    }
+}
+
+@media(max-width: 600px){
+    .mainHeader .headerWrapper .headerContent .title {
+        font-size: 100px;
+        letter-spacing: 4px;
+    }
+    .mainHeader .headerWrapper .headerContent .text {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    .mainHeader .headerWrapper .headerContent .headerNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mainHeader .headerWrapper .headerContent .headerNav .link:first-child {
+        margin-bottom: 15px;
+    }
+}
+
+@media(max-width: 500px){
+    .mainHeader .headerWrapper .headerContent .title {
+        font-size: 85px;
+        letter-spacing: 0;
+    }
+    .mainHeader .headerWrapper .headerContent .text {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 400px){
+    .mainHeader .headerWrapper .headerContent {
+        margin-left: 10px;
+    }
+    .mainHeader .headerWrapper .headerContent .title {
+        font-size: 75px;
+    }
+}

@@ -1,0 +1,105 @@
+.mainNav {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+.mainNav .navList {
+    display: flex;
+    justify-content: center;
+    padding: 45px 0;
+}
+
+.main-nav .navList.menuActive {
+    right: 0;
+    height: 100%;
+}
+
+.mainNav .navList .item {
+    margin-left: 30px;
+}
+
+.mainNav .navList .item.menuActive {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.mainNav .navList .item:nth-child(1) {
+    margin-left: 0;
+}
+
+
+.mainNav .navList .item .link {
+    font-size: 35px;
+    color: #f0f0f0;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+}
+
+.mainNav .navList .item .link::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    height: 2px;
+    transition: all 0.5s;
+    width: 0;
+}
+
+
+.mainNav .navList .item .link:hover::before {
+    width: 100%;
+}
+
+
+.mainNav .navList .item .link.active::before {
+    animation-name: underlineLinkMove;
+    animation-duration: 0.5s;
+    content: '';
+    position: absolute;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    height: 2px;
+}
+
+.mainNav .navList .menuBar {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 50px;
+    color: #f0f0f0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@keyframes underlineLinkMove {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@media(max-width: 900px){
+    .mainNav .navList {
+        right: -100%;
+        position: relative;
+        flex-direction: column;
+        transition: all 0.5s;
+        align-items: center;
+    }
+
+    .mainNav .navList .item{
+        margin-top: 15px;
+    }
+
+    .mainNav .menuBar {
+        display: block;
+    }
+}
